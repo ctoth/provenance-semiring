@@ -14,6 +14,15 @@ from __future__ import annotations
 
 from provenance_semiring.derivative import partial_derivative
 from provenance_semiring.homomorphism import Homomorphism, evaluate
+from provenance_semiring.labels import (
+    EnvironmentKey,
+    JustificationRecord,
+    Label,
+    NogoodSet,
+    combine_labels,
+    merge_labels,
+    normalize_environments,
+)
 from provenance_semiring.nogoods import NogoodWitness, ProvenanceNogood, live
 from provenance_semiring.polynomial import (
     PolynomialTerm,
@@ -38,7 +47,11 @@ from provenance_semiring.variables import (
 __version__ = "0.1.0"
 
 __all__ = [
+    "EnvironmentKey",
     "Homomorphism",
+    "JustificationRecord",
+    "Label",
+    "NogoodSet",
     "NogoodWitness",
     "PolynomialTerm",
     "ProvenanceNogood",
@@ -50,10 +63,13 @@ __all__ = [
     "VariablePower",
     "WhySupport",
     "boolean_presence",
+    "combine_labels",
     "derivation_count",
     "derive_source_variable_id",
     "evaluate",
     "live",
+    "merge_labels",
+    "normalize_environments",
     "normalize_why_supports",
     "partial_derivative",
     "tropical_cost",
