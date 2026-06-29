@@ -105,10 +105,9 @@ def _as_classifier(
 ) -> Callable[[SourceVariableId], str]:
     if kind_of is None:
         return lambda _variable: "other"
-    if isinstance(kind_of, Mapping):
-        mapping = kind_of
-        return lambda variable: mapping.get(variable, "other")
-    return kind_of
+    if callable(kind_of):
+        return kind_of
+    return lambda variable: kind_of.get(variable, "other")
 
 
 def normalize_why_supports(supports: list[WhySupport]) -> tuple[WhySupport, ...]:

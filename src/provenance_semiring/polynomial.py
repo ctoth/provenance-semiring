@@ -95,12 +95,12 @@ class ProvenancePolynomial:
     def from_terms(cls, terms: Iterable[PolynomialTerm]) -> ProvenancePolynomial:
         return cls(tuple(terms))
 
-    def __add__(self, other: ProvenancePolynomial) -> ProvenancePolynomial:
+    def __add__(self, other: object) -> ProvenancePolynomial:
         if not isinstance(other, ProvenancePolynomial):
             return NotImplemented
         return ProvenancePolynomial(self.terms + other.terms)
 
-    def __mul__(self, other: ProvenancePolynomial) -> ProvenancePolynomial:
+    def __mul__(self, other: object) -> ProvenancePolynomial:
         if not isinstance(other, ProvenancePolynomial):
             return NotImplemented
         if not self.terms or not other.terms:

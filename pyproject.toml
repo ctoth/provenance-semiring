@@ -19,7 +19,7 @@ dev = ["pytest", "pyright", "hypothesis"]
 
 [tool.pyright]
 include = ["src/provenance_semiring"]
-typeCheckingMode = "basic"
+typeCheckingMode = "strict"
 
 [tool.pytest.ini_options]
 markers = [
